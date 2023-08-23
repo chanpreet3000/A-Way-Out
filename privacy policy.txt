@@ -1,0 +1,39 @@
+Privacy Policy for A Way Out
+
+Last Updated: 23-08-2023
+
+This Privacy Policy explains how Chanpreet ("we", "us", or "our") collects, uses, and discloses information when you use A Way Out (the "Game").
+
+Information We Collect
+
+Personal Information: We do not collect any personally identifiable information (PII) such as names, addresses, or contact details from users of the Game.
+
+Device Information: We may collect certain information about your device, such as the device model, operating system version, unique device identifiers, and other technical information that helps us optimize and improve the Game.
+
+Usage Data: We may collect anonymous usage data that helps us understand how players interact with the Game. This includes information about in-game actions, levels completed, and other gameplay metrics. This data is used solely for analytics and improving the player experience.
+
+Cookies
+
+The Game does not use cookies or similar tracking technologies.
+
+Third-Party Services
+
+The Game may integrate with third-party services, such as ad networks or analytics providers. These services may collect and process data as described in their respective privacy policies. We do not have control over their practices and encourage you to review their policies before using the Game.
+
+Children's Privacy
+
+The Game is intended for general audiences and is not directed towards children under the age of 13. We do not knowingly collect personal information from children. If you believe that a child has provided us with personal information, please contact us at chanpreet3000@gmail.com, and we will promptly delete such information.
+
+Data Security
+
+We take reasonable measures to protect the information collected through the Game. However, no method of transmission or electronic storage is completely secure. We cannot guarantee the absolute security of your information.
+
+Changes to this Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will post the updated policy on this page, and the "Last Updated" date will indicate the latest revision.
+
+Contact Us
+
+If you have any questions about this Privacy Policy, please contact us at chanpreet3000@gmail.com.
+
+Please customize this template with your game's specific details and ensure that it accurately reflects how your game handles user data. If your game collects any personal information or sensitive data, you should consult legal experts to create a privacy policy that complies with relevant laws and regulations.
