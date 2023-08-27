@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
-
 public static class AudioManager
 {
     public  enum  Sound
@@ -11,6 +7,7 @@ public static class AudioManager
         LevelCompleted,
         DoorClosing,
         DoorOpening,
+        ButtonClick
     }
     
     public static void PlayAudio(Sound sound)
