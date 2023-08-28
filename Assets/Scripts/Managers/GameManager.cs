@@ -1,9 +1,10 @@
 using UnityEngine;
-using static AudioManager;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+    private static string currentLevel = "NO-DATA";
     
     public static GameManager Instance
     {
@@ -17,14 +18,19 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     public class SoundAudioClip
     {
-        public Sound sound;
+        public AudioManager.Sound sound;
         public AudioClip audioClip;
     }
     public  SoundAudioClip[] soundAudioClipArray;
 
     public void LevelCompleted()
     {
-        AudioManager.PlayAudio(Sound.LevelCompleted);
+        AudioManager.PlayAudio(AudioManager.Sound.LevelCompleted);
         Debug.Log("Level Completed!");
+    }
+    public void OpenLevel(string levelName)
+    {
+        currentLevel = levelName;
+        SceneManager.LoadScene(levelName);
     }
 }

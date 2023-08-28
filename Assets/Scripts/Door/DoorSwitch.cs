@@ -6,7 +6,7 @@ public class DoorSwitch : MonoBehaviour
     [SerializeField] private Door door;
     [SerializeField] private MeshRenderer mr;
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (door == null || mr == null) return;
         if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("SwitchActivator")) return;

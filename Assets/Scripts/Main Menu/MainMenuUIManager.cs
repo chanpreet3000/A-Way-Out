@@ -18,8 +18,10 @@ public class MainMenuUIManager : MonoBehaviour
     {
         Application.Quit();
     }
-    public void downloadbtnclicked()
+    public void OnLevelSelectBackButton()
     {
-        Application.OpenURL("https://play.google.com/store/apps/details?id=com.Channi.BallHalter3D");
+        mainMenuUI.SetActive(true);
+        levelSelectUI.SetActive(false);
+        Camera.main.GetComponent<Animator>().SetBool("levelselect", false);
     }
 }
