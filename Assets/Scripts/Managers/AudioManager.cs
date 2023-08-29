@@ -16,6 +16,7 @@ public static class AudioManager
         if (audioClip == null) return;
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audiosource = soundGameObject.AddComponent<AudioSource>();
+        soundGameObject.AddComponent<DontDestory>();
         audiosource.loop = false;
         audiosource.volume = 1.0f;
         audiosource.pitch = 1.0f;

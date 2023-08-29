@@ -6,20 +6,21 @@ using UnityEngine.UI;
 
 public class LevelSelectButton : MonoBehaviour
 {
-    private int levelNumber = -1;
-    private Button button;
-    void Start()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(() =>
-        {
-            GameManager.Instance.OpenLevel("Level " + levelNumber);
-        });
-    }
-
+    [SerializeField] private Sprite lockedSprite;
     public void SetLevelNumber(int levelNumber)
     {
-        this.levelNumber = levelNumber;
-        GetComponentInChildren<TextMeshProUGUI>().text = levelNumber.ToString();
+        if(levelNumber == -1)
+        {
+            GetComponent<Image>().sprite = lockedSprite;
+            GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(false);
+        }
+        else
+        {
+            GetComponentInChildren<TextMeshProUGUI>().text = levelNumber.ToString();
+            GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GameManager.Instance.OpenLevel(levelNumber);
+            });
+        }
     }
 }

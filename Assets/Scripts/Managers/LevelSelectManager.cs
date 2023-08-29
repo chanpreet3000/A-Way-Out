@@ -8,10 +8,18 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField] private int totalLevels;
     void Start()
     {
-        for(int i = 0; i < totalLevels; i++)
+        int unlockedLevels = GameManager.Instance.GetUnlockedLevels();
+        for (int level = 1; level <= totalLevels; level++)
         {
             GameObject localObject = Instantiate(levelSelectGameObject, transform);
-            localObject.GetComponent<LevelSelectButton>().SetLevelNumber(i + 1);
+            if(level > unlockedLevels)
+            {
+                localObject.GetComponent<LevelSelectButton>().SetLevelNumber(-1);
+            }
+            else
+            {
+                localObject.GetComponent<LevelSelectButton>().SetLevelNumber(level);
+            }
         }
     }
 }

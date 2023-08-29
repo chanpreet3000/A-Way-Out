@@ -20,13 +20,4 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, positionOffset + player.position, smoothSpeed * Time.deltaTime);
     }
-    private void OnValidate()
-    {
-        if (player == null)
-        {
-            player = FindObjectOfType<PlayerMovement>().gameObject.transform;
-        }
-        transform.localRotation = Quaternion.Euler(rotationOffset);
-        transform.position = positionOffset + player.position;
-    }
 }

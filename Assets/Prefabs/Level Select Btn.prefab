@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0285afa43ddb7429fe4326cebcd070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: 4
 --- !u!114 &2809873009647585958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f71ef9cc9e4e4294909e8138517dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Training
+  lockedSprite: {fileID: 21300000, guid: 68debcaaabf05d74eb95a074add4ab4f, type: 3}
 --- !u!1 &4944233726614425284
 GameObject:
   m_ObjectHideFlags: 0
