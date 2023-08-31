@@ -47,4 +47,8 @@ public class GameManager : MonoBehaviour
     public int GetCurrentLevel() {
         return currentLevel;
     }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
