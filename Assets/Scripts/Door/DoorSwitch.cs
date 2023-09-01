@@ -7,29 +7,23 @@ public class DoorSwitch : MonoBehaviour
     [SerializeField] private MeshRenderer mr;
     [SerializeField] private Material onCollisionEnterMaterial, onCollisionExitMaterial;
 
-    private void OnCollisionStay(Collision collision)
+    private bool Check(Collider other)
     {
-        //
-        if (door == null || mr == null) return;
-        if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("SwitchActivator")) return;
-        ColorGreen();
+        if (other.CompareTag("Player") || other.CompareTag("SwitchActivator")) return true;
+        return false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!Check(other)) return;
+        mr.material = onCollisionEnterMaterial;
         door.SetDoorOpened(true);
     }
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (door == null || mr == null) return;
-        if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("SwitchActivator")) return;
-        ColorRed();
-        door.SetDoorOpened(false);
-    }
-    private void ColorRed()
-    {
-        if (mr == null) return;
+        if (!Check(other)) return;
         mr.material = onCollisionExitMaterial;
-    }
-    private void ColorGreen()
-    {
-        if (mr == null) return;
-        mr.material = onCollisionEnterMaterial;
+        door.SetDoorOpened(false);
     }
 }

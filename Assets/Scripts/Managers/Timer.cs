@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -12,7 +11,7 @@ public class Timer : MonoBehaviour
         if(timer < 0f && !timerDone)
         {
             timerDone = true;
-            GameManager.Instance.RestartLevel();
+            LevelManager.Instance.RestartLevel();
         }
     }
 

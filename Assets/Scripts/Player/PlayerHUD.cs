@@ -10,7 +10,7 @@ public class PlayerHUD : MonoBehaviour
 
     private void Start()
     {
-        levelStartText.SetText("Level " + GameManager.Instance.GetCurrentLevel());
+        levelStartText.SetText("Level " + LevelManager.Instance.GetCurrentLevel());
     }
     public void PauseBtnClicked()
     {
@@ -37,6 +37,6 @@ public class PlayerHUD : MonoBehaviour
 
     public void NextLevelBtnClicked()
     {
-        GameManager.Instance.OpenLevel(GameManager.Instance.GetCurrentLevel() + 1);
+        LevelManager.Instance.OpenNextLevel();
     }
 }

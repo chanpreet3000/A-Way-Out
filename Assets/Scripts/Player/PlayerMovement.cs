@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-
+using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float torqueMultipler = 100f;
@@ -44,5 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isGrounded) return;
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("LevelExit")){
+            LevelManager.Instance.LevelCompleted();
+        }
     }
 }

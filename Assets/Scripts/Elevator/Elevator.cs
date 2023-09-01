@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
-
+﻿using UnityEngine;
 public class Elevator : MonoBehaviour
 {
+    [SerializeField] private float speed = 0.05f;
+    [SerializeField] private AnimationCurve animationCurve;
     [SerializeField] private Material Red, Green;
     [SerializeField] private Vector3 endPosition;
-    [SerializeField] private float speed = 0.05f;
     [SerializeField] private MeshRenderer mr;
     private bool isActive = false;
     private Vector3 startPosition;
+    private float time = 0f;
 
     private void Start()
     {
@@ -39,12 +37,16 @@ public class Elevator : MonoBehaviour
     {
         if (isActive)
         {
-            transform.position = Vector3.Lerp(transform.position, endPosition, speed * Time.fixedDeltaTime);
+            time += speed * Time.fixedDeltaTime;
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, startPosition, speed * Time.fixedDeltaTime);
+            time -= speed * Time.fixedDeltaTime;
         }
+
+        float maxTime = animationCurve.keys[animationCurve.length - 1].time;
+        time = Mathf.Clamp(time, 0f, maxTime);
+        transform.position = Vector3.Lerp(startPosition, endPosition, time / maxTime);
     }
 
     private void OnDrawGizmosSelected()

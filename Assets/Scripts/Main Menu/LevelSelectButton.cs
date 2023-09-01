@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelectButton : MonoBehaviour
@@ -19,7 +18,7 @@ public class LevelSelectButton : MonoBehaviour
             GetComponentInChildren<TextMeshProUGUI>().text = levelNumber.ToString();
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                GameManager.Instance.OpenLevel(levelNumber);
+                SceneManager.LoadScene("Level " + levelNumber);
             });
         }
     }

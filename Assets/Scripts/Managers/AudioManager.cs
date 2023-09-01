@@ -1,33 +1,51 @@
 using UnityEngine;
-public static class AudioManager
+public class AudioManager : MonoBehaviour
 {
-    public  enum  Sound
+    [System.Serializable]
+    public class SoundAudioClip
     {
-        PlayerJump,
-        LevelCompleted,
-        DoorClosing,
-        DoorOpening,
-        ButtonClick
+        public Sound sound;
+        public AudioClip audioClip;
+        public bool loop = false;
+        public float volume = 1.0f;
     }
-    
-    public static void PlayAudio(Sound sound)
+    [SerializeField] private SoundAudioClip[] soundAudioClipArray;
+
+    private static AudioManager _instance;
+    public static AudioManager Instance
     {
-        AudioClip audioClip = GetAudioClip(sound);
-        if (audioClip == null) return;
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject obj = Instantiate(Resources.Load("AudioManager")) as GameObject;
+                _instance = obj.GetComponent<AudioManager>();
+                DontDestroyOnLoad(obj);
+            }
+            return _instance;
+        }
+    }
+
+    public void PlayAudio(Sound sound)
+    {
+        SoundAudioClip soundAudioClip = GetAudioClip(sound);
+        if (soundAudioClip == null) return;
+        //
+        AudioClip audioClip = soundAudioClip.audioClip;
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audiosource = soundGameObject.AddComponent<AudioSource>();
-        soundGameObject.AddComponent<DontDestory>();
-        audiosource.loop = false;
-        audiosource.volume = 1.0f;
-        audiosource.pitch = 1.0f;
+        audiosource.loop = soundAudioClip.loop;
+        audiosource.volume = soundAudioClip.volume;
         audiosource.PlayOneShot(audioClip);
-        Object.Destroy(soundGameObject, audioClip.length);
+        //
+        DontDestroyOnLoad(soundGameObject);
+        Destroy(soundGameObject, audioClip.length);
     }
-    public static AudioClip GetAudioClip(Sound sound)
+    public SoundAudioClip GetAudioClip(Sound sound)
     {
-        foreach (GameManager.SoundAudioClip item in GameManager.Instance.soundAudioClipArray)
+        foreach (SoundAudioClip item in soundAudioClipArray)
         {
-            if (item.sound == sound) return item.audioClip;
+            if (item.sound == sound) return item;
         }
         return null;
     }

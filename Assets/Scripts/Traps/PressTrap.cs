@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PressTrap : MonoBehaviour
@@ -20,13 +18,5 @@ public class PressTrap : MonoBehaviour
         time -= Mathf.Floor(time);
         float location = distance * animationCurve.Evaluate(time);
         transform.position = pos + new Vector3(0, location, 0);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            GameManager.Instance.RestartLevel();
-        }
     }
 }

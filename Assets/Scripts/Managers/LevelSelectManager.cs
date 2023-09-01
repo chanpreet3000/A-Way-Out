@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelSelectManager : MonoBehaviour
@@ -8,7 +6,7 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField] private int totalLevels;
     void Start()
     {
-        int unlockedLevels = GameManager.Instance.GetUnlockedLevels();
+        int unlockedLevels = LevelManager.GetUnlockedLevels();
         for (int level = 1; level <= totalLevels; level++)
         {
             GameObject localObject = Instantiate(levelSelectGameObject, transform);
