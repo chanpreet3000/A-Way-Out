@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6053597548663774474}
   - component: {fileID: 4749719675400039932}
   - component: {fileID: 8337047877042657390}
+  - component: {fileID: 4281804457691411147}
   - component: {fileID: 8129830426426584729}
   - component: {fileID: 1274229456850422915}
-  - component: {fileID: 9146957531499977032}
-  - component: {fileID: 7938959750715001862}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -282,6 +281,27 @@ MonoBehaviour:
     - rid: 7377077127528579072
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
       data: 
+--- !u!65 &4281804457691411147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4479495510247528335}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 12.700001, z: 14.35}
+  m_Center: {x: 0, y: 0.00000023841858, z: -1.125}
 --- !u!23 &8129830426426584729
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -332,49 +352,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4479495510247528335}
   m_Mesh: {fileID: 0}
---- !u!64 &9146957531499977032
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479495510247528335}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!95 &7938959750715001862
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479495510247528335}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08e9225ad32a1694c97bddb3d849190b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5174391374148687456
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +736,7 @@ Transform:
   m_GameObject: {fileID: 5322354042081584423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -1.2199998, z: 0}
+  m_LocalPosition: {x: 5.2, y: 5.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1097,6 +1074,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 844241082999322982}
   mr: {fileID: 9134218055447259595}
+  onCollisionEnterMaterial: {fileID: 2100000, guid: ae24cee0ca682c64c9ba493cc16f23d0,
+    type: 2}
+  onCollisionExitMaterial: {fileID: 2100000, guid: e36739c667ba70f46a025055a73075d1,
+    type: 2}
 --- !u!1 &7265851966144017313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1104,7 @@ Transform:
   m_GameObject: {fileID: 7265851966144017313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 6.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1143,11 +1124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784802f5954bba74dabe36c88dce0ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorAnimator: {fileID: 7938959750715001862}
-  onCollisionEnterMaterial: {fileID: 2100000, guid: ae24cee0ca682c64c9ba493cc16f23d0,
-    type: 2}
-  onCollisionExitMaterial: {fileID: 2100000, guid: e36739c667ba70f46a025055a73075d1,
-    type: 2}
+  door: {fileID: 6053597548663774474}
   doorSwitch: {fileID: 2659353523432626789}
+  endPosition: {x: 0, y: 5.75, z: 0}
   switchPosition: {x: 5.2, y: 5.28, z: 0}
   switchRotation: {x: 0, y: 0, z: 0}
+  speed: 1

@@ -5,31 +5,31 @@ public class DoorSwitch : MonoBehaviour
 
     [SerializeField] private Door door;
     [SerializeField] private MeshRenderer mr;
-    
+    [SerializeField] private Material onCollisionEnterMaterial, onCollisionExitMaterial;
+
     private void OnCollisionStay(Collision collision)
     {
-
         //
         if (door == null || mr == null) return;
         if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("SwitchActivator")) return;
         ColorGreen();
-        door.doorAnimator.SetBool("opening", true);
+        door.SetDoorOpened(true);
     }
     private void OnCollisionExit(Collision collision)
     {
         if (door == null || mr == null) return;
         if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("SwitchActivator")) return;
         ColorRed();
-        door.doorAnimator.SetBool("opening", false);
+        door.SetDoorOpened(false);
     }
-    public void ColorRed()
+    private void ColorRed()
     {
         if (mr == null) return;
-        mr.material = door.onCollisionExitMaterial;
+        mr.material = onCollisionExitMaterial;
     }
-    public void ColorGreen()
+    private void ColorGreen()
     {
         if (mr == null) return;
-        mr.material = door.onCollisionEnterMaterial;
+        mr.material = onCollisionEnterMaterial;
     }
 }
