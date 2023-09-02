@@ -3,6 +3,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float torqueMultipler = 100f;
     [SerializeField] private float jumpForce = 1f;
+    [SerializeField] private GameObject playerDeathPrefab;
+
+    private bool isLevelCompleted = false;
+    private bool isPlayerDead = false;
 
     //
     private Joystick joystick;
@@ -18,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!joystick || !rb) return;
+        if (isPlayerDead || isLevelCompleted) return;
         isGrounded = CheckIfGrounded();
         playerInput = GetMovementInput();
         ApplyTorque();
@@ -46,18 +51,37 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("LevelExit")){
+        if (other.CompareTag("LevelExit"))
+        {
             LevelManager.Instance.LevelCompleted();
-        }else if(other.CompareTag("SpikeTrap")){
+        }
+        else if (other.CompareTag("SpikeTrap"))
+        {
             other.GetComponent<Animator>().SetTrigger("activate");
             PlayerDead();
-        }else if(other.CompareTag("PressTrap")){
+        }
+        else if (other.CompareTag("PressTrap"))
+        {
             PlayerDead();
-        }else if(other.CompareTag("Lava")){
+        }
+        else if (other.CompareTag("Lava"))
+        {
             PlayerDead();
         }
     }
-    private void PlayerDead(){
+    private void PlayerDead()
+    {
+        if (isPlayerDead) return;
+        isPlayerDead = true;
+
         Debug.Log("Player Dead");
+        Instantiate(playerDeathPrefab, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
+        FindObjectOfType<PlayerHUD>().OnPlayerDead();
+        Invoke("RestartLevel", 2.5f);
+    }
+
+    private void RestartLevel(){
+        LevelManager.Instance.RestartLevel();
     }
 }

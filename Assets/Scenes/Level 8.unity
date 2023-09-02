@@ -3770,7 +3770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6227f9133c7b8643be3dd69d0a14892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 25
+  timer: 35
 --- !u!1001 &520769450
 PrefabInstance:
   m_ObjectHideFlags: 0

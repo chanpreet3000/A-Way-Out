@@ -1,11 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHUD : MonoBehaviour
 {
+    [SerializeField] private GameObject playerControlUI;
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject levelCompleteUI;
+    [SerializeField] private GameObject playerDeadUI;
     [SerializeField] private TextMeshProUGUI levelStartText;
 
     private void Start()
@@ -22,17 +23,21 @@ public class PlayerHUD : MonoBehaviour
     }
     public void RestartBtnClicked()
     {
-        pauseUI.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LevelManager.Instance.RestartLevel();
     }
     public void MainMenuBtnClicked()
     {
-        pauseUI.SetActive(false);
-        SceneManager.LoadScene("Main Menu");
+        LevelManager.Instance.OpenMainMenuLevel();
     }
     public void OpenLevelCompleteUI()
     {
         levelCompleteUI.SetActive(true);
+    }
+
+    public void OnPlayerDead()
+    {
+        playerControlUI.SetActive(false);
+        playerDeadUI.SetActive(true);
     }
 
     public void NextLevelBtnClicked()

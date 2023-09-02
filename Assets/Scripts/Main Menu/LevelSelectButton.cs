@@ -18,7 +18,7 @@ public class LevelSelectButton : MonoBehaviour
             GetComponentInChildren<TextMeshProUGUI>().text = levelNumber.ToString();
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("Level " + levelNumber);
+                LevelManager.OpenLevel(levelNumber);
             });
         }
     }

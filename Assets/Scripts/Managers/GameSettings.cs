@@ -6,6 +6,6 @@ public class GameSettings : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 144;
-        QualitySettings.vSyncCount = 1;
+        QualitySettings.vSyncCount = 0;
     }
 }

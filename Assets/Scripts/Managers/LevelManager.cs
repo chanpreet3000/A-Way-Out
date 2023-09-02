@@ -40,11 +40,11 @@ public class LevelManager : MonoBehaviour
     {
         if (currentLevel == totalLevels)
         {
-            SceneManager.LoadScene("Main Menu");
+            OpenMainMenuLevel();
         }
         else
         {
-            SceneManager.LoadScene("Level " + (currentLevel + 1));
+            OpenLevel(currentLevel + 1);
         }
     }
     public static int GetUnlockedLevels()
@@ -57,6 +57,15 @@ public class LevelManager : MonoBehaviour
     }
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Level " + currentLevel);
+        OpenLevel(currentLevel);
+    }
+
+    public void OpenMainMenuLevel()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public static void OpenLevel(int number){
+        SceneManager.LoadScene("Level " + number);
     }
 }
