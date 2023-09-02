@@ -48,6 +48,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.CompareTag("LevelExit")){
             LevelManager.Instance.LevelCompleted();
+        }else if(other.CompareTag("SpikeTrap")){
+            other.GetComponent<Animator>().SetTrigger("activate");
+            PlayerDead();
+        }else if(other.CompareTag("PressTrap")){
+            PlayerDead();
+        }else if(other.CompareTag("Lava")){
+            PlayerDead();
         }
+    }
+    private void PlayerDead(){
+        Debug.Log("Player Dead");
     }
 }
