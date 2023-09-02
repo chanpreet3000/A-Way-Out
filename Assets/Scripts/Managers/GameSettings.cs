@@ -6,6 +6,7 @@ public class GameSettings : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 144;
-        QualitySettings.vSyncCount = 0;
+        QualitySettings.vSyncCount = 1;
+        AudioManager.Instance.PlayAudio(Sound.LevelMusic);
     }
 }

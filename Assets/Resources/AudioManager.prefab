@@ -46,10 +46,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundAudioClipArray:
   - sound: 1
-    audioClip: {fileID: 8300000, guid: 2340f63e1023a054997470abe13434a3, type: 3}
+    audioClip: {fileID: 8300000, guid: 80fecf2299588e24a870c6ff08a018b8, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.6
   - sound: 4
+    audioClip: {fileID: 8300000, guid: 0614ab5be2fbaf644951043e780276e3, type: 3}
+    loop: 0
+    volume: 0.8
+  - sound: 0
     audioClip: {fileID: 8300000, guid: d97bdf931cd7efc4583c406830efef17, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.7
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: f1e67892c023af94b9ae105345d71c8a, type: 3}
+    loop: 1
+    volume: 0.4
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: 4c1ae46e8229f6f48bfd6d0e489917b8, type: 3}
+    loop: 1
+    volume: 0.2

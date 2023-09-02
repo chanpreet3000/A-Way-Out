@@ -874,6 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610854171}
   - component: {fileID: 610854172}
+  - component: {fileID: 610854173}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -951,7 +952,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -963,6 +964,116 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &610854173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610854170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceae94b024c643e4b84701d7bbd8e595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.14852914
+      value: 0.3807645
+      inSlope: 1.4491303
+      outSlope: 1.4491303
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2346321
+      value: 0.7777109
+      inSlope: 1.342298
+      outSlope: 1.342298
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.31668267
+      value: 0.54543936
+      inSlope: 0.55157346
+      outSlope: 0.55157346
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.41056868
+      value: 0.853803
+      inSlope: 1.2244722
+      outSlope: 1.2244722
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49796325
+      value: 0.32976153
+      inSlope: 0.11217475
+      outSlope: 0.11217475
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.4256686
+    - serializedVersion: 3
+      time: 0.63951266
+      value: 0.89715385
+      inSlope: 1.7143074
+      outSlope: 1.7143074
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.78121334
+      value: 0.44571626
+      inSlope: 0.16586962
+      outSlope: 0.16586962
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6114243
+    - serializedVersion: 3
+      time: 0.90291107
+      value: 0.55229867
+      inSlope: 0.07336814
+      outSlope: 0.07336814
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.50000715
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxIntensity: 12
+  speed: 0.5
 --- !u!1 &665881655
 GameObject:
   m_ObjectHideFlags: 0

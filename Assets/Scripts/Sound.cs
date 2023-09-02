@@ -4,5 +4,8 @@ public enum Sound
     LevelCompleted,
     DoorClosing,
     DoorOpening,
-    ButtonClick
+    ButtonClick,
+    None,
+    LevelMusic,
+    PlayerDead,
 }

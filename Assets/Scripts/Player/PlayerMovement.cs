@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         if (!isGrounded) return;
+        AudioManager.Instance.PlayAudio(Sound.PlayerJump);
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
     private void OnTriggerEnter(Collider other)
@@ -74,7 +75,9 @@ public class PlayerMovement : MonoBehaviour
         if (isPlayerDead) return;
         isPlayerDead = true;
 
+
         Debug.Log("Player Dead");
+        AudioManager.Instance.PlayAudio(Sound.PlayerDead);
         Instantiate(playerDeathPrefab, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         FindObjectOfType<PlayerHUD>().OnPlayerDead();
