@@ -36,7 +36,8 @@ public class AudioManager : MonoBehaviour
         AudioSource audiosource = soundGameObject.AddComponent<AudioSource>();
         audiosource.loop = soundAudioClip.loop;
         audiosource.volume = soundAudioClip.volume;
-        audiosource.PlayOneShot(audioClip);
+        audiosource.clip = audioClip;
+        audiosource.Play();
         //
         DontDestroyOnLoad(soundGameObject);
         Destroy(soundGameObject, audioClip.length);

@@ -30,8 +30,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool CheckIfGrounded()
     {
-        Vector3 groundCheckTransform = transform.position + new Vector3(0, -transform.localScale.y / 2 - 0.06f, 0);
-        return Physics.CheckSphere(groundCheckTransform, 0.05f);
+        float groundCheckRadius = 0.08f;
+        Vector3 groundCheckTransform = transform.position + new Vector3(0, -transform.localScale.y / 2 - groundCheckRadius - 0.01f, 0);
+        return Physics.CheckSphere(groundCheckTransform, groundCheckRadius);
     }
 
     private void ApplyTorque()
