@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
             return _instance;
         }
     }
-
+    private bool levelMusicStarted = false;
     public void PlayAudio(Sound sound)
     {
         SoundAudioClip soundAudioClip = GetAudioClip(sound);
@@ -41,6 +41,11 @@ public class AudioManager : MonoBehaviour
         //
         DontDestroyOnLoad(soundGameObject);
         Destroy(soundGameObject, audioClip.length);
+    }
+    public void PlayLevelAudio(){
+        if(levelMusicStarted)return;
+        levelMusicStarted = true;
+        PlayAudio(Sound.LevelMusic);
     }
     public SoundAudioClip GetAudioClip(Sound sound)
     {

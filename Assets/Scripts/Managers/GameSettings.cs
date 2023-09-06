@@ -3,10 +3,10 @@ using UnityEngine;
 public class GameSettings : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Application.targetFrameRate = 144;
         QualitySettings.vSyncCount = 1;
-        AudioManager.Instance.PlayAudio(Sound.LevelMusic);
+        AudioManager.Instance.PlayLevelAudio();
     }
 }
