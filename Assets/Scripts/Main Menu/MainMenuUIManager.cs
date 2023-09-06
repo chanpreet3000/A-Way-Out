@@ -4,9 +4,13 @@ public class MainMenuUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject levelSelectUI;
+    [SerializeField] private GameObject howToPlayUI;
+
     public void PlayButtonClicked()
     {
+        howToPlayUI.SetActive(false);
         mainMenuUI.SetActive(false);
+
         levelSelectUI.SetActive(true);
         Camera.main.GetComponent<Animator>().SetBool("levelselect", true);
     }
@@ -18,16 +22,28 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void HowToPlayButtonClicked()
     {
-    }
+        mainMenuUI.SetActive(false);
+        levelSelectUI.SetActive(false);
 
-    public void SettingsButtonClicked()
-    {
+        howToPlayUI.SetActive(true);
+        Camera.main.GetComponent<Animator>().SetBool("levelselect", true);
     }
     public void OnLevelSelectBackButton()
     {
-        mainMenuUI.SetActive(true);
         levelSelectUI.SetActive(false);
+        howToPlayUI.SetActive(false);
+
+        mainMenuUI.SetActive(true);
         Camera.main.GetComponent<Animator>().SetBool("levelselect", false);
     }
 
+    public void OnBallHalter3DButton()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.Channi.BallHalter3D");
+    }
+
+    public void OnRateUsButton()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.Channi.AWAYOUT");
+    }
 }

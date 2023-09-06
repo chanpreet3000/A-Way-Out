@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 1f;
     [SerializeField] private GameObject playerDeathPrefab;
 
-    private bool isLevelCompleted = false;
+    public bool isLevelCompleted = false;
     private bool isPlayerDead = false;
 
     //
@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("LevelExit"))
         {
+            isLevelCompleted = true;
             LevelManager.Instance.LevelCompleted();
         }
         else if (other.CompareTag("SpikeTrap"))
